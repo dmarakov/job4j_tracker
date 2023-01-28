@@ -32,7 +32,7 @@ public class StartUI {
         UserAction[] actions = {
                 new CreateAction(output), new ShowAllItems(output), new EditItem(output),
                 new DeleteItem(output), new FindItemById(output), new FindItemByName(output),
-                new ExitProgram()
+                new ExitProgram(output)
         };
         new StartUI(output).init(input, tracker, actions);
     }
