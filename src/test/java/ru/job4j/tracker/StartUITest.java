@@ -99,7 +99,7 @@ public class StartUITest {
                         + "0. Find item by name" + ln
                         + "1. Exit Program" + ln
                         + "=== Find item by name ===" + ln
-                        + tracker.findByName(item.getName())[0] + ln
+                        + item + ln
                         + "Menu." + ln
                         + "0. Find item by name" + ln
                         + "1. Exit Program" + ln
@@ -121,7 +121,7 @@ public class StartUITest {
                         + "0. Find item by id" + ln
                         + "1. Exit Program" + ln
                         + "=== Find item by id ===" + ln
-                        + tracker.findById(item.getId()) + ln
+                        + item + ln
                         + "Menu." + ln
                         + "0. Find item by id" + ln
                         + "1. Exit Program" + ln
