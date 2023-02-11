@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tracker {
-    //   private final Item[] items = new Item[100];
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-//    private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
