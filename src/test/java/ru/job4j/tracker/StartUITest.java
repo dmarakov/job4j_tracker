@@ -13,7 +13,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         UserAction[] actions = {new CreateAction(out), new ExitProgram(out)};
         new StartUI(new StubOutput()).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0].getName()).isEqualTo("new item");
+        assertThat(tracker.findAll().get(0).getName()).isEqualTo("new item");
     }
 
     @Test
@@ -77,7 +77,7 @@ public class StartUITest {
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
                         + "=== Show all items ===" + ln
-                        + tracker.findAll()[0] + ln
+                        + tracker.findAll().get(0) + ln
                         + "Menu." + ln
                         + "0. Show all items" + ln
                         + "1. Exit Program" + ln
