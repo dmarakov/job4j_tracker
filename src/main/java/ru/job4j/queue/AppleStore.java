@@ -16,9 +16,6 @@ public class AppleStore {
         String rsl = null;
         for (int i = 0; i < count; i++) {
             rsl = queue.poll().name();
-            if (queue.peek() == null) {
-                break;
-            }
         }
         return rsl;
     }
@@ -27,9 +24,6 @@ public class AppleStore {
         String rsl = null;
         for (int i = 0; i < count + 1; i++) {
             rsl = queue.poll().name();
-            if (queue.peek() == null) {
-                break;
-            }
         }
         return rsl;
     }
