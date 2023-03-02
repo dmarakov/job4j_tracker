@@ -36,6 +36,16 @@ public class StringCompareTest {
     }
 
     @Test
+    public void whenRightGreaterThanLeftResultShouldBeNegative() {
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Ivanova",
+                "Petrov"
+        );
+        assertThat(rst).isLessThan(0);
+    }
+
+    @Test
     public void secondCharOfLeftGreaterThanRightShouldBePositive() {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
