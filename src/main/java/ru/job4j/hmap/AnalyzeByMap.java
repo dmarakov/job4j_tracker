@@ -30,16 +30,11 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        HashMap<String, Integer> tempMap = new LinkedHashMap<>();
+        Map<String, Integer> tempMap = new LinkedHashMap<>();
         List<Label> rsl = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subj : pupil.subjects()) {
-                if (!tempMap.containsKey(subj.name())) {
-                    tempMap.put(subj.name(), subj.score());
-                } else {
-                    tempMap.put(subj.name(), tempMap.get(subj.name()) + subj.score());
-                }
-
+                tempMap.put(subj.name(), tempMap.getOrDefault(subj.name(), 0) + subj.score());
             }
         }
         for (String name : tempMap.keySet()) {
@@ -62,7 +57,7 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        HashMap<String, Integer> tempMap = new LinkedHashMap<>();
+        Map<String, Integer> tempMap = new LinkedHashMap<>();
         List<Label> rsl = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subj : pupil.subjects()) {
