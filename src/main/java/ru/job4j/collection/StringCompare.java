@@ -7,15 +7,12 @@ public class StringCompare implements Comparator<String> {
     public int compare(String left, String right) {
         int rsl = 0;
         int loopLength = Math.min(left.length(), right.length());
-        for (int i = 0; i <= loopLength - 1; i++) {
+        for (int i = 0; i < loopLength; i++) {
             rsl = Integer.compare(left.charAt(i), right.charAt(i));
             if (rsl != 0) {
                 break;
             }
         }
-        if (rsl == 0) {
-            rsl = Integer.compare(left.length(), right.length());
-        }
-        return rsl;
+        return rsl == 0 ? Integer.compare(left.length(), right.length()) : rsl;
     }
 }
