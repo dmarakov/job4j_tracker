@@ -2,10 +2,24 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывающий объект User
+ * @author dmarakov
+ * @version 1.0
+ */
+
 public class User {
+    /**
+     * Имеет два поля passport и username
+     */
     private String passport;
     private String username;
 
+    /**
+     * А так же стандартный набор методов get и set и конструктор
+     * @param passport - паспорт пользователя
+     * @param username - его имя
+     */
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
