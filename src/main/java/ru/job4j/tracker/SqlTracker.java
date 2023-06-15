@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-
 public class SqlTracker implements Store {
 
     private Connection cn;
@@ -53,7 +52,6 @@ public class SqlTracker implements Store {
         }
         return item;
     }
-
 
     @Override
     public boolean replace(int id, Item item) {
