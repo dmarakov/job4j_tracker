@@ -38,7 +38,7 @@ public class StartUI {
         Store tracker = new MemTracker();
         List<UserAction> actions = Arrays.asList(new CreateAction(output), new ShowAllItems(output), new EditItem(output),
                 new DeleteItem(output), new FindItemById(output), new FindItemByName(output),
-                new ExitProgram(output), new CreateManyItems(output),new DeleteAllItems(output));
+                new ExitProgram(output), new CreateManyItems(output), new DeleteAllItems(output));
         new StartUI(output).init(input, tracker, actions);
     }
 }
