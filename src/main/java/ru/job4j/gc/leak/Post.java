@@ -6,11 +6,8 @@ import java.util.Objects;
 public class Post {
 
     private int id;
-
     private String text;
-
     private List<Comment> comments;
-
 
     public Post(String text, List<Comment> comments) {
         this.text = text;
@@ -25,9 +22,6 @@ public class Post {
         this.id = id;
     }
 
-    /*остальные getter/setter*/
-
-
     @Override
     public String toString() {
         return "Post{"
@@ -38,8 +32,12 @@ public class Post {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Post post = (Post) o;
         return Objects.equals(id, post.id);
     }
