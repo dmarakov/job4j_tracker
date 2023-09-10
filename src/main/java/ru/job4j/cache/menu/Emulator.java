@@ -7,19 +7,18 @@ import java.util.Scanner;
 
 public class Emulator {
 
+    private AbstractCache<String, String> cache;
+    String dirPath;
+
     public void init() {
         boolean exitFlag = true;
         Scanner scanner = new Scanner(System.in);
-        String dirPath;
-        String fileName;
-        AbstractCache<String, String> cache;
+
 
         while (exitFlag) {
             String menu = """
                     Menu:
                     1. Указжите кэшируемую директорию
-                    2. Загрузить содержимое файла в кэш
-                    3. Получить содержимое файла из кэша
                     0. Выход
                     """;
             System.out.println(menu);
@@ -29,9 +28,6 @@ public class Emulator {
             } else if ("1".equals(answer)) {
                 System.out.println("Введите относительный путь");
                 dirPath = scanner.nextLine();
-                cache = new DirFileCache(dirPath);
-                System.out.println("Введите имя файла");
-                fileName = scanner.nextLine();
                 boolean exitInnerFlag = true;
                 while (exitInnerFlag) {
                     String innerMenu = """
@@ -44,15 +40,42 @@ public class Emulator {
                     answer = scanner.nextLine();
                     if ("0".equals(answer)) {
                         exitInnerFlag = false;
-                        continue;
-                    }
-                    if ("1".equals(answer)) {
-                        cache.get(fileName);
+                    } else if ("1".equals(answer)) {
+                        loadCache();
                     } else if ("2".equals(answer)) {
-                        System.out.println(cache.get(fileName));
+                        getCache();
                     }
                 }
             }
+        }
+    }
+
+    private void loadCache() {
+        if (cache == null) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите имя файла");
+            String filePath = scanner.nextLine();
+            cache = new DirFileCache(dirPath);
+            cache.get(filePath);
+            System.out.println("Кэш загружен.");
+        } else {
+            System.out.println("Кэш уже загружен.");
+        }
+    }
+
+    private void getCache() {
+        if (cache != null) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите имя файла");
+            String filePath = scanner.nextLine();
+            String cachedContent = cache.get(filePath); // Use filePath as the key
+            if (cachedContent == null) {
+                System.out.println("Кеша еще нет, сначала загрузите его");
+            } else {
+                System.out.println(cachedContent);
+            }
+        } else {
+            System.out.println("Сначала загрузите кэш.");
         }
     }
 

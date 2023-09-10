@@ -22,10 +22,4 @@ public class DirFileCache extends AbstractCache<String, String> {
         }
         return out;
     }
-
-    public static void main(String[] args) {
-        AbstractCache<String, String> dirFileCache = new DirFileCache("./src/main/java/ru/job4j/cache");
-        //    System.out.println(dirFileCache.load("Names.txt"));
-        System.out.println(dirFileCache.get("Names.txt"));
-    }
 }

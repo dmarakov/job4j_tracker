@@ -16,7 +16,6 @@ public abstract class AbstractCache<K, V> {
     public V get(K key) {
         V value = cache.getOrDefault(key, new SoftReference<>(null)).get();
         if (value == null) {
-            System.out.println("Кеша нету. Создаю.");
             value = load(key);
             put(key, value);
         }
@@ -24,5 +23,4 @@ public abstract class AbstractCache<K, V> {
     }
 
     protected abstract V load(K key);
-
 }
