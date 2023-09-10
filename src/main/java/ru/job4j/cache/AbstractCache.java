@@ -23,7 +23,6 @@ public abstract class AbstractCache<K, V> {
         return value;
     }
 
-
     protected abstract V load(K key);
 
 }

@@ -60,6 +60,4 @@ public class Emulator {
         Emulator emulator = new Emulator();
         emulator.init();
     }
-
-
 }
