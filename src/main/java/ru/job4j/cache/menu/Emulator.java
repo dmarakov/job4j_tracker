@@ -67,7 +67,7 @@ public class Emulator {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите имя файла");
             String filePath = scanner.nextLine();
-            String cachedContent = cache.get(filePath); // Use filePath as the key
+            String cachedContent = cache.get(filePath);
             if (cachedContent == null) {
                 System.out.println("Кеша еще нет, сначала загрузите его");
             } else {
