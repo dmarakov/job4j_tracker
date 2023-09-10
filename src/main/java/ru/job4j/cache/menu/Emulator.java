@@ -14,7 +14,6 @@ public class Emulator {
         boolean exitFlag = true;
         Scanner scanner = new Scanner(System.in);
 
-
         while (exitFlag) {
             String menu = """
                     Menu:
